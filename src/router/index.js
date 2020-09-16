@@ -24,6 +24,24 @@ export default new Router({
 			name: 'registration',
 			meta: {layout: 'empty'},
 			component: () => import('@/views/Registration.vue')
+		},
+		{
+			path: '/employes',
+			name: 'employes',
+			meta: {layout: 'main'},
+			component: () => import('@/views/Employes.vue')
+		},
+		{
+			path: '/employes/:id',
+			name: 'Id',
+			meta: {layout: 'main'},
+			component: () => import('@/views/Employe.vue')
+		},
+		{
+			path: '*',
+			name: '404',
+			meta: {layout: 'main'},
+			component: () => import('@/views/404.vue')
 		}
 	]
 })

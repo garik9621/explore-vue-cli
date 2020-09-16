@@ -5,11 +5,11 @@
       <nav>
         <div class="container">
           <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Logo</a>
+            <router-link to="/" class="brand-logo">Logo</router-link>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="sass.html">Sass</a></li>
-              <li><a href="badges.html">Components</a></li>
-              <li><a href="collapsible.html">JavaScript</a></li>
+              <li><router-link to="/registration">Registration</router-link></li>
+              <li><router-link to="/auth">Login</router-link></li>
+              <li><a href="#" @click.prevent="logout">Logout</a></li>
             </ul>
           </div>
         </div>
@@ -53,7 +53,14 @@
 
 <script>
 export default {
-  name: "MainLayout"
+  name: "MainLayout",
+  methods: {
+    async logout() {
+      await this.$store.dispatch('logout')
+
+      this.$router.push('/auth')
+    }
+  }
 }
 </script>
 
