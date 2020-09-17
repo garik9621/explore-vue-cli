@@ -1,8 +1,9 @@
 <template>
-  <component :is="layout">
-    <router-view />
-  </component>
-
+  <transition name="app" mode="out-in">
+    <component :is="layout">
+      <router-view />
+    </component>
+  </transition>
 </template>
 
 <script>
@@ -27,4 +28,14 @@ export default {
 
 <style>
 @import '~materialize-css/dist/css/materialize.min.css';
+.app-enter-active,
+.app-leave-active {
+  transition: opacity 3s ease;
+}
+
+.app-enter,
+.app-leave-to {
+  opacity: 0;
+}
+
 </style>

@@ -3,7 +3,7 @@
     <div class="employes-list">
         <div class="container">
             <div class="row">
-                <EmployesItem v-for="(item, index) in employes">
+                <EmployesItem v-for="(item, index) in employes" :key="index">
 
                     <img slot="img" :src="item.photo">
                     {{item.name}}
