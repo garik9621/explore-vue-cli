@@ -1,6 +1,9 @@
 import firebase from "firebase/app";
 
 export default {
+	state: {
+		session: false
+	},
 	actions: {
 		async login({commit, dispatch}, {email, password}){
 			try {
@@ -36,5 +39,13 @@ export default {
 			const user = firebase.auth().currentUser
 			return user ? user.uid : null
 		}
+	},
+	mutations: {
+		setSession(state, session) {
+			state.session = session
+		}
+	},
+	getters: {
+		session: s => s.session
 	}
 }

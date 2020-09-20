@@ -1,9 +1,9 @@
 <template>
-  <transition name="app" mode="out-in">
+<!--  <transition name="app" mode="out-in">-->
     <component :is="layout">
       <router-view />
     </component>
-  </transition>
+<!--  </transition>-->
 </template>
 
 <script>
